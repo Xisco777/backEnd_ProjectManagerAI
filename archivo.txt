@@ -1,0 +1,994 @@
+Question: Tenemos un programa en vue.js version 3 que esta formado por una carpeta llamada src que contine la carpeta assets, components, plugins y view. En la carpeta components tenemos los archivos: // Contenido de HelloWorld.vue:
+<template>
+  <div>
+    <v-file-input
+    v-model="files"
+    label="Resumen de la reunion"
+    placeholder="Archivo"
+    prepend-icon="mdi-paperclip"
+    multiple
+  >
+  </v-file-input>
+      <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-col class="text-center" cols="12">
+          <v-btn
+            color="primary"
+            flat
+            @click=enviar()
+          >
+            Enviar
+          </v-btn>
+        </v-col>
+      </v-card-actions>
+      <div>
+      <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-container fluid>
+          <v-textarea
+            autocomplete="email"
+            label="Resumen"
+          ></v-textarea>
+        </v-container>
+      </v-card-actions>
+  </div>
+  </div>
+</template>
+<script>
+import * as d3 from 'd3'
+export default {
+  methods: {
+    enviar() {
+      this.message = 'You clicked the button!'
+    }
+  },
+  mounted () {
+    let p = d3.select('body')
+      .selectAll('p')
+
+    p.text('Hello World')
+  }
+}
+</script>
+<style>
+</style>
+
+// Contenido de Introduction.vue:
+
+<template>
+  <div class="project-management-case-study">
+    <h1>Caso Estudio: Gestión de proyectos de electrónica utilizando Inteligencia Artificial</h1>
+    <h2>Autor: Francisco Prats Quílez</h2>
+
+    <section>
+      <h3>1. Introducción</h3>
+      <p>
+        En la actualidad, la gestión de proyectos de electrónica se realiza de forma analítica por parte de un responsable del proyecto, quien debe abordar múltiples tareas, tales como la gestión del personal, la asignación de tareas, la estimación de tiempos o la generación de ofertas. Este enfoque tradicional puede ser propenso a errores humanos y a ineficiencias. A medida que un equipo de ingenieros comienza a trabajar en el desarrollo del producto electrónico, la complejidad y la carga de trabajo pueden aumentar significativamente. La Inteligencia Artificial (IA) ha emergido como una herramienta poderosa para optimizar este proceso, proporcionando soluciones innovadoras que mejoran la eficiencia y precisión en la gestión de proyectos. Este caso de estudio examina la implementación de un sistema de gestión de proyectos de electrónica utilizando IA, destacando sus beneficios, desafíos y resultados.
+      </p>
+    </section>
+
+    <section>
+      <h3>2. Objetivos del Proyecto</h3>
+      <ul>
+        <li>
+          <strong>Automatización del Proceso:</strong> Implementar modelos y herramientas de IA para automatizar los procesos del proyecto, analizando la información de entrada y generando la información de salida de manera eficiente. Este proceso se gestionará a través de un agente de IA.
+        </li>
+        <div class="image-container">
+          <img src="/img/automatizacion.png" alt="automatizacion">
+      </div>
+        <li>
+          <strong>Integración con Plataformas de Gestión de Proyectos:</strong> Utilizar APIs y Python para controlar e integrar diferentes plataformas de gestión de proyectos de ingeniería, facilitando la sincronización y el flujo de información entre ellas.
+        </li>
+        <div class="image-container">
+          <img src="/img/integracion.png" alt="integracion">
+      </div>
+        <li>
+          <strong>Mejora de Modelos de Lenguaje Extenso (LLM):</strong> Abordar la no determinación de los modelos actuales mediante técnicas como la Generación Aumentada por Recuperación (RAG), mejorando la consistencia y precisión de los resultados generados por los LLM.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>3. Metodología</h3>
+      <h4>Fase Inicial del Proyecto: Análisis de Requisitos de Alto Nivel – Presentación de la Propuesta</h4>
+      <p>
+        En la fase inicial del proyecto, los clientes presentan un problema al cual debemos ofrecer una propuesta de solución. Diferentes agentes de IA pueden asistir en este proceso, generando resúmenes de las reuniones iniciales o proponiendo soluciones a los puntos pendientes.
+      </p>
+      <div class="image-container">
+        <img src="/img/faseinicial.png" alt="faseinicial">
+      </div>
+      <h4>Fase de Diseño de Hardware PCB</h4>
+      <p>
+        Durante el desarrollo de una PCB, un ingeniero de hardware crea los requisitos de la PCB a partir de los requisitos generales del proyecto, para a partir de ahí, desarrollar la PCB. Este proceso incluye varias etapas, tales como la creación de diagramas de bloques o la documentación de la descripción del hardware. Métodos como la Generación Aumentada por Recuperación (RAG) pueden ayudar en la selección de componentes, el análisis de datasheets o la revisión de esquemáticos.
+      </p>
+      <div class="image-container">
+        <img src="/img/hw.png" alt="hw">
+      </div>
+      <h4>Fase de Validación y Verificación del Producto</h4>
+      <p>
+        En las fases finales del proyecto, un ingeniero de Validación y Verificación (V&V) y un ingeniero de SW Test pueden utilizar diferentes agentes de IA para, por ejemplo, seleccionar la instrumentación de prueba o desarrollar el software de prueba en Python, basándose en los casos de prueba definidos.
+      </p>
+      <div class="image-container">
+        <img src="/img/testing.png" alt="testing">
+      </div>
+    </section>
+
+    <section>
+      <h3>Conclusiones</h3>
+      <p>
+        La implementación de un sistema de gestión de proyectos de electrónica utilizando IA demostró ser una solución efectiva para abordar los desafíos tradicionales del sector. La capacidad de la IA para automatizar procesos, optimizar recursos y detectar errores proactivamente resultó en una mejora significativa en la eficiencia y calidad de los proyectos. Este caso de estudio subraya el potencial de la IA para transformar la gestión de proyectos de electrónica.
+      </p>
+    </section>
+
+    <section>
+      <h3>Futuras Direcciones</h3>
+      <ul>
+        <li>
+          <strong>Expansión de Capacidades:</strong> A partir de la demostración citada, se podría extender el proyecto, abordando fases no citadas en un proyecto de electrónica, así como generalizar la interpretación inicial para adaptarlo a proyectos en áreas de producción o una metodología de trabajo predefinida.
+        </li>
+        <li>
+          <strong>Investigación Continua:</strong> Mantener una investigación constante para explorar nuevas aplicaciones de IA en la gestión de proyectos de electrónica y adaptarse a las tendencias emergentes del mercado, así como las nuevas capacidades de los modelos.
+        </li>
+      </ul>
+    </section>
+  </div>
+</template>
+<script>
+export default {
+  data () {
+    return {}
+  }
+}
+</script>
+<style scoped>
+.project-management-case-study {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+.project-management-case-study h1, .project-management-case-study h2 {
+  text-align: center;
+}
+.project-management-case-study section {
+  margin-bottom: 20px;
+}
+</style>
+
+  En la carpeta view tenemos los archivos: // Contenido de Examples.vue:
+<template>
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app width="280">
+      <v-divider></v-divider>
+      <v-list dense>
+        <v-list-group v-for="(item, key) in items" :key="key" v-model="item.active" :append-icon="item.appendIcon" @click="itemClick(item, key)">
+          <template v-slot:activator>
+            <v-list-item-icon>
+              <v-icon v-text="item.icon"></v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list-item-group v-if="item.children" color="primary" v-model="subItemActive">
+            <v-list-item v-for="(subItem, k) in item.children" :key="k" @click="subItemClick(subItem, k)">
+              <v-list-item-icon></v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title v-text="subItem.title"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list-group>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="primary" dark :dense="denseFlag">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title style="width: 300px" class="pl-4 ml-0">
+        <span class="hidden-sm-and-down">Project Manager AI</span>
+      </v-toolbar-title>
+      <v-text-field
+        v-model="searchText"
+        flat
+        solo-inverted
+        hide-details
+        prepend-inner-icon="mdi-magnify"
+        label="Search"
+        class="hidden-sm-and-down"
+        :dense="denseFlag"
+        @keyup.enter="handleSearch"
+      />
+      <v-spacer />
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn text v-bind="attrs" v-on="on" small>
+            <v-icon>mdi-translate</v-icon>
+            <v-icon small> mdi-chevron-down </v-icon>
+          </v-btn>
+        </template>
+        <v-list dense>
+          <v-list-item-group v-model="selectedItem" color="primary">
+            <v-subheader>TRANSLATIONS</v-subheader>
+            <v-list-item>
+              <v-list-item-title @click="changeLang('en')">English</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title @click="changeLang('zh')">Chino</v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-menu>
+      <v-tooltip v-if="!fullScreen" bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon @click="requestFullscreen" v-bind="attrs" v-on="on">
+            <v-icon>mdi-fullscreen</v-icon>
+          </v-btn>
+        </template>
+        <span>Full Screen</span>
+      </v-tooltip>
+      <v-tooltip v-else bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon @click="exitFullScreen" v-bind="attrs" v-on="on">
+            <v-icon>mdi-fullscreen-exit</v-icon>
+          </v-btn>
+        </template>
+        <span>Exit Full Screen</span>
+      </v-tooltip>
+      <v-tooltip v-if="!dark" bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon @click="changeTheme" v-bind="attrs" v-on="on">
+            <v-icon>mdi-brightness-7</v-icon>
+          </v-btn>
+        </template>
+        <span>Light</span>
+      </v-tooltip>
+      <v-tooltip v-else bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon @click="changeTheme" v-bind="attrs" v-on="on">
+            <v-icon>mdi-brightness-4</v-icon>
+          </v-btn>
+        </template>
+        <span>Dark</span>
+      </v-tooltip>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon @click="dialog = true" v-bind="attrs" v-on="on">
+            <v-icon size="28">mdi-information-outline</v-icon>
+          </v-btn>
+        </template>
+        <span>About</span>
+      </v-tooltip>
+    </v-app-bar>
+    <v-main>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+    <v-dialog v-model="dialog" width="500">
+      <v-card>
+        <v-card-title primary-title>Vue D3 Examples</v-card-title>
+        <v-card-text>Version: v{{ version }}</v-card-text>
+        <v-card-text>Author: YuanWei Guo</v-card-text>
+        <v-card-text>Email: qingyi_w@outlook.com</v-card-text>
+      </v-card>
+    </v-dialog>
+    <v-fab-transition>
+      <v-btn v-if="!hidden" color="primary" dark fixed bottom right fab @click="scrollTop">
+        <v-icon>mdi-chevron-up</v-icon>
+      </v-btn>
+    </v-fab-transition>
+    <v-snackbar
+     :timeout="3000"
+      v-model="snackbar"
+      bottom
+      :color="$vuetify.theme.themes.light.warning"
+      outlined
+      >NO Match! </v-snackbar>
+  </v-app>
+</template>
+
+<script>
+import packageJson from '../../package.json'
+export default {
+  data: () => ({
+    snackbar: false,
+    version: '',
+    fullScreen: false,
+    hidden: true,
+    dialog: false,
+    dark: false,
+    drawer: null,
+    itemActive: 0,
+    subItemActive: 0,
+    selectedItem: 0,
+    denseFlag: true,
+    marginTop: 0,
+    searchText: ''
+  }),
+  computed: {
+    items: function () {
+      return [
+        {
+          icon: 'mdi-alpha-i-box-outline',
+          title: this.$vuetify.lang.t('$vuetify.sidebar.titleIntroduction.value'),
+          path: '/examples/introduction',
+          appendIcon: null,
+          active: true
+        },
+        {
+          icon: 'mdi-alpha-b-box-outline',
+          title: this.$vuetify.lang.t('$vuetify.sidebar.title1.value'),
+          children: [
+            { title: this.$vuetify.lang.t('$vuetify.sidebar.title1.children.title1.value'), path: '/examples/helloworld' }
+          ],
+          appendIcon: 'mdi-chevron-down'
+        }
+      ]
+    }
+  },
+  created () {
+    this.version = packageJson.version
+    if (localStorage.getItem('themeDark') && localStorage.getItem('themeDark') === 'true') {
+      this.$vuetify.theme.dark = true
+      this.dark = true
+    }
+    if (this.$route.path === '/examples') {
+      // default route path
+      this.$router.push('/examples/introduction').catch(err => { }) // eslint-disable-line
+    } else {
+      this.$router.push(this.$route.path).catch(err => { }) // eslint-disable-line
+      const path = this.$route.path
+      this.items.forEach((item, key) => {
+        if (item.path === path) {
+          this.itemActive = key
+        } else {
+          if (item.children && item.children.length > 0) {
+            item.children.forEach((v, k) => {
+              if (v.path === path) {
+                sessionStorage.setItem('itemActive', key)
+                sessionStorage.setItem('subItemActive', k)
+              }
+            })
+          }
+        }
+      })
+
+      if (sessionStorage.getItem('itemActive')) {
+        this.items[0].active = false
+        this.items[Number(sessionStorage.getItem('itemActive'))]['active'] = true
+      }
+
+      if (sessionStorage.getItem('subItemActive')) {
+        this.subItemActive = Number(sessionStorage.getItem('subItemActive'))
+      }
+    }
+  },
+  mounted () {
+    if (sessionStorage.getItem('i18nLocale') && sessionStorage.getItem('i18nLocale') === 'zh') {
+      this.selectedItem = 1
+    }
+    document.addEventListener('fullscreenchange', () => {
+      console.log('fullscreenchange')
+    })
+
+    window.addEventListener('scroll', () => {
+      let scrollTop = document.documentElement.scrollTop
+      if (scrollTop > 100) {
+        this.hidden = false
+      } else {
+        this.hidden = true
+      }
+    })
+
+    // -- Watch Material Design Breakpoints --
+    // https://vuetifyjs.com/en/features/breakpoints/#breakpoint-service
+    const self = this
+    if (self.$vuetify.breakpoint.name === 'xl') {
+      self.denseFlag = false
+    }
+    this.$watch(
+      function () {
+        return self.$vuetify.breakpoint.name
+      },
+      function (newVal, oldVal) {
+        if (newVal === 'xl') {
+          self.denseFlag = false
+        } else {
+          self.denseFlag = true
+        }
+      }
+    )
+    // -- end --
+  },
+  beforeDestroy () {
+    sessionStorage.removeItem('subItemActive')
+    sessionStorage.removeItem('itemActive')
+  },
+  methods: {
+    handleSearch () {
+      let flag = false
+      this.subItemActive = null
+      let parentIndex = this.items.findIndex(item => item.title.toLowerCase() === this.searchText.toLowerCase())
+      if (parentIndex !== -1) {
+        flag = true
+        sessionStorage.setItem('itemActive', parentIndex)
+        if (this.items[parentIndex].children) {
+          sessionStorage.setItem('subItemActive', 0)
+          this.$router.push(this.items[parentIndex].children[0].path).catch(err => { }) // eslint-disable-line
+        } else {
+          this.$router.push(this.items[parentIndex].path).catch(err => { }) // eslint-disable-line
+        }
+      } else {
+        this.items.forEach((item, key) => {
+          if (item.children && item.children.length > 0) {
+            let childIndex = item.children.findIndex(child => child.title.toLowerCase() === this.searchText.toLowerCase())
+            if (childIndex !== -1) {
+              flag = true
+              sessionStorage.setItem('subItemActive', childIndex)
+              sessionStorage.setItem('itemActive', key)
+              this.$router.push(item.children[childIndex].path).catch(err => { }) // eslint-disable-line
+            }
+          }
+        })
+      }
+      if (!flag) {
+        this.snackbar = true
+      }
+
+      this.items[Number(sessionStorage.getItem('itemActive'))]['active'] = true
+      this.subItemActive = Number(sessionStorage.getItem('subItemActive'))
+    },
+    scrollTop () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    },
+    requestFullscreen () {
+      this.fullScreen = true
+      const docElm = document.documentElement
+      if (docElm.requestFullscreen) {
+        docElm.requestFullscreen()
+      } else if (docElm.msRequestFullscreen) {
+        docElm.msRequestFullscreen()
+      } else if (docElm.mozRequestFullScreen) {
+        docElm.mozRequestFullScreen()
+      } else if (docElm.webkitRequestFullScreen) {
+        docElm.webkitRequestFullScreen()
+      }
+    },
+    exitFullScreen () {
+      this.fullScreen = false
+      if (document.exitFullscreen) {
+        document.exitFullscreen()
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen()
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen()
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen()
+      }
+    },
+    changeLang (lang) {
+      this.$i18n.locale = lang
+      sessionStorage.setItem('i18nLocale', lang)
+      if (sessionStorage.getItem('itemActive')) {
+        this.items[0].active = false
+        this.items[Number(sessionStorage.getItem('itemActive'))]['active'] = true
+        if (sessionStorage.getItem('subItemActive')) {
+          this.subItemActive = Number(sessionStorage.getItem('subItemActive'))
+        }
+      }
+    },
+    openTab () {
+      window.open('https://github.com/gywgithub/vue-d3-examples', '_blank')
+    },
+    itemClick (item, key) {
+      this.subItemActive = null
+      sessionStorage.setItem('itemActive', key)
+      console.dir(item)
+      if (!item.children) {
+        this.$router.push(item.path).catch(err => { }) // eslint-disable-line
+      }
+    },
+    subItemClick (item, key) {
+      sessionStorage.setItem('subItemActive', key)
+      this.$router.push(item.path).catch(err => { }) // eslint-disable-line
+    },
+    goHome () {
+      this.$router.push('/Home').catch(err => { }) // eslint-disable-line
+    },
+    changeTheme () {
+      this.dark = !this.dark
+      localStorage.setItem('themeDark', String(this.dark))
+      this.$vuetify.theme.dark = this.dark
+    }
+  }
+}
+</script>
+<style scoped>
+.img-container {
+  display: flex;
+  padding: 20px;
+  width: 280px;
+  height: 140px;
+}
+.logo-img {
+  width: 45%;
+  object-fit: contain;
+  margin: 0 5px;
+}
+.img-d3-padding {
+  padding: 4px !important;
+}
+</style>
+
+// Contenido de Home.vue:
+<template>
+  <div class="main justify-center">
+    <a class="github-corner z-index-2" target="_blank" href="https://github.com/gywgithub/vue-d3-examples">
+      <svg width="100" height="100" viewBox="0 0 250 250" style="fill: #409eff; color: #fff; position: absolute; top: 0; border: 0; right: 0" class="z-index-2">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path>
+        <text class="github-corner-text" text-anchor="middle" x="175" y="25" transform="rotate(45)" font-size="30" font-weight="bold">Fork me on Github</text>
+      </svg>
+    </a>
+    <div class="flex-column margin-top-20vh">
+      <div class="d-flex justify-center">
+        <img src="../assets/img/vue-logo.svg" class="d-flex img-width" />
+        <img src="../assets/img/d3.svg" class="d-flex img-width img-d3-padding" />
+      </div>
+      <div class="display-3 font-weight-regular span-margin">Vue&nbsp;&nbsp;D3&nbsp;&nbsp;V5&nbsp;&nbsp;Examples</div>
+      <div>
+        <v-btn outlined large rounded color="primary" class="margin-0-15 z-index-2" @click="openTab"><v-icon left>mdi-github</v-icon>Github</v-btn>
+        <v-btn outlined large rounded color="primary" class="margin-0-15 z-index-2" @click="routerRedirect"><v-icon left>mdi-palm-tree</v-icon>{{ $vuetify.lang.t('$vuetify.examplesButton') }}</v-btn>
+      </div>
+    </div>
+    <v-btn fixed icon bottom right @click="changeTheme" class="z-index-2">
+      <v-icon v-if="!dark">mdi-brightness-7</v-icon>
+      <v-icon v-else>mdi-brightness-4</v-icon>
+    </v-btn>
+    <vue-particles color="#409eff" class="particles-position" :lineOpacity="0.5" :clickEffect="false" :particlesNumber="60" :particleSize="3"></vue-particles>
+  </div>
+</template>
+<script>
+export default {
+  name: 'Home',
+  data () {
+    return {
+      dark: false
+    }
+  },
+  created () {
+    if (localStorage.getItem('themeDark') && localStorage.getItem('themeDark') === 'true') {
+      this.$vuetify.theme.dark = true
+      this.dark = true
+    }
+  },
+  methods: {
+    openTab () {
+      window.open('https://github.com/gywgithub/vue-d3-examples', '_blank')
+    },
+    routerRedirect () {
+      this.$router.push('/examples').catch(err => { }) // eslint-disable-line
+    },
+    changeTheme () {
+      this.dark = !this.dark
+      localStorage.setItem('themeDark', String(this.dark))
+      this.$vuetify.theme.dark = this.dark
+    }
+  }
+}
+</script>
+<style scoped>
+.main {
+  text-align: center;
+}
+
+/** -- github corner -- */
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+/** -- github corner end -- */
+
+.margin-top-20vh {
+  margin-top: 20vh;
+}
+
+.img-width {
+  width: 12% !important;
+  margin: 0 35px;
+}
+
+.img-d3-padding {
+  padding: 8px;
+}
+
+.span-margin {
+  margin: 20px 0 40px 0;
+}
+
+.margin-0-15 {
+  margin: 0 15px;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.particles-position {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+</style>
+
+// Contenido de NotFound.vue:
+<template>
+  <div>
+    <div class="center">
+      <div class="display-4">404</div>
+      <br />
+      <div class="container">
+        <div class="message-position">The page you are looking for was not found. Please make sure the address is correct and page is not moved.</div>
+        <br />
+        <a href="javascript:history.back()">previous page</a>
+      </div>
+    </div>
+    <div class="svg-container">
+      <svg
+        jsname="BUfzDd"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 810"
+        preserveAspectRatio="xMinYMin slice"
+        aria-hidden="true"
+      >
+        <path
+          fill="#efefee"
+          d="M592.66 0c-15 64.092-30.7 125.285-46.598 183.777C634.056 325.56 748.348 550.932 819.642 809.5h419.672C1184.518 593.727 1083.124 290.064 902.637 0H592.66z"
+        />
+        <path
+          fill="#f4f4f4"
+          d="M545.962 183.777c-53.796 196.576-111.592 361.156-163.49 490.74 11.7 44.494 22.8 89.49 33.1 134.883h404.07c-71.294-258.468-185.586-483.84-273.68-625.623z"
+        />
+        <path
+          fill="#f7f7f7"
+          d="M153.89 0c74.094 180.678 161.088 417.448 228.483 674.517C449.67 506.337 527.063 279.465 592.56 0H153.89z"
+        />
+        <path
+          fill="#fbfbfc"
+          d="M153.89 0H0v809.5h415.57C345.477 500.938 240.884 211.874 153.89 0z"
+        />
+        <path
+          fill="#ebebec"
+          d="M1144.22 501.538c52.596-134.583 101.492-290.964 134.09-463.343 1.2-6.1 2.3-12.298 3.4-18.497 0-.2.1-.4.1-.6 1.1-6.3 2.3-12.7 3.4-19.098H902.536c105.293 169.28 183.688 343.158 241.684 501.638v-.1z"
+        />
+        <path
+          fill="#e1e1e1"
+          d="M1285.31 0c-2.2 12.798-4.5 25.597-6.9 38.195C1321.507 86.39 1379.603 158.98 1440 257.168V0h-154.69z"
+        />
+        <path
+          fill="#e7e7e7"
+          d="M1278.31,38.196C1245.81,209.874 1197.22,365.556 1144.82,499.838L1144.82,503.638C1185.82,615.924 1216.41,720.211 1239.11,809.6L1439.7,810L1439.7,256.768C1379.4,158.78 1321.41,86.288 1278.31,38.195L1278.31,38.196z"
+        />
+      </svg>
+    </div>
+  </div>
+</template>
+
+<style scoped="true">
+.center {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 20vh;
+  text-align: center;
+}
+
+.container {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 35vh;
+  text-align: center;
+}
+
+.message-position {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+a {
+  line-height: 60px;
+  font-weight: normal;
+  text-decoration: none;
+  margin: auto;
+}
+
+.svg-container {
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.svg-container svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+</style>
+
+  En la misma raiz de la carpeta src tenemos el archivo App.vue con el siguiente contenido: // Contenido de App.vue:
+<template>
+  <div id="app">
+    <v-app  v-scroll:#scroll-target="onScroll">
+      <router-view />
+    <!-- Popup -->
+    <v-dialog
+      v-model="showPopup"
+      width="500"
+    >
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+        Introduce Modificaciones
+        </v-card-title>
+
+        <v-text-field label="Introducir texto" v-model="texto" />
+        <v-file-input
+    v-model="files"
+    label="File input"
+    placeholder="Upload your documents"
+    prepend-icon="mdi-paperclip"
+    multiple
+  >
+  </v-file-input>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            flat
+            @click=sendMessage()
+          >
+            Modificar
+          </v-btn>
+          <v-btn
+            color="secundary"
+            flat
+            @click=closePopup()
+          >
+            Cancelar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    </v-app>
+  </div>
+</template>
+<script>
+import axios from 'axios'
+export default {
+  data () {
+    return {
+      hidden: false,
+      offsetTop: 0,
+      title: 'Hello Vue 3!',
+      showPopup: false,
+      popupMessage: '',
+      texto: '',
+      archivo: null,
+      files: []
+    }
+  },
+  mounted () {
+    console.log('Introduction')
+    window.addEventListener('keyup', this.handleKeyup)
+  },
+  beforeUnmount() {
+    window.removeEventListener('keyup', this.handleKeyup)
+  },
+  methods: {
+    scrollTop () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    },
+    onScroll (e) {
+      this.offsetTop = e.target.scrollTop
+      console.log(this.offsetTop)
+    },
+    sendMessage() {
+      if (this.archivo) {
+      }
+      try {
+        axios
+          .get(`http://localhost:8000/modificar?texto=${encodeURIComponent(this.texto)}`)
+      } catch (error) {
+        console.error('Error al enviar el mensaje:', error)
+      }
+      this.showPopup = false
+    },
+    closePopup() {
+      this.showPopup = false
+    },
+    handleKeyup(event) {
+      if (event.ctrlKey && event.key === 'q') {
+        this.showPopup = true
+      }
+    },
+    onFileChange(event) {
+      this.archivo = event.target.files[0]
+    }
+  }
+}
+</script>
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#app {
+  padding: 0 0;
+  margin: 0 0;
+}
+
+.main {
+  height: 100vh;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.container-border {
+  border: 1px solid #eee;
+}
+</style>
+
+  En la misma raiz de la carpeta src tenemos el archivo router.js con el siguiente contenido: // Contenido de router.js:
+import Vue from 'vue'
+import Router from 'vue-router'
+
+Vue.use(Router)
+
+const router = new Router({
+  // mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: () => import('./views/Home.vue'),
+      meta: { title: '' }
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: () => import('./views/Home.vue'),
+      meta: { title: 'Home' }
+    },
+    {
+      path: '/examples',
+      name: 'examples',
+      component: () => import('./views/Examples.vue'),
+      meta: { title: 'Examples' },
+      children: [
+        {
+          path: '/examples/introduction',
+          name: 'introduction',
+          component: () => import('./components/Introduction.vue'),
+          meta: { title: 'Introduction' }
+        },
+        {
+          path: '/examples/helloworld',
+          name: 'helloworld',
+          component: () => import('./components/HelloWorld.vue'),
+          meta: { title: 'Basic' }
+        }
+      ]
+    },
+    {
+      path: '*',
+      name: 'notfound',
+      component: () => import('./views/NotFound.vue'),
+      meta: { title: 'Notfound' }
+    }
+  ]
+})
+
+// router guard
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title ? to.meta.title + ' | ' + 'Vue D3 V5 Examples' : 'Vue D3 V5 Examples'
+  next()
+})
+
+export default router
+
+  En la misma raiz de la carpeta src tenemos el archivo main.js con el siguiente contenido: // Contenido de main.js:
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import { vuetify, i18n } from '@/plugins/vuetify'
+import VueParticles from 'vue-particles'
+
+Vue.config.productionTip = false
+Vue.use(VueParticles)
+
+new Vue({
+  router,
+  vuetify,
+  i18n,
+  render: h => h(App)
+}).$mount('#app')
+
+. Ahora te voy a dejar la modificacion que quiero que realices sobre el documento que consideres a raiz de la modificacion. Es posible que se indique añadir nuevo codigo. La cuestion es la siguiente: {question}. Es muy importante que me devuelvas el nombre del archivo.vue o .js que vayas a modificar o añadir seguido del codigo. Evita incluir informacion extra.
+                Answer:  
